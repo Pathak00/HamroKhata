@@ -1,0 +1,54 @@
+# =========================
+# ASP.NET Core
+# =========================
+bin/
+obj/
+wwwroot/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET build output
+publish/
+*.dll
+*.exe
+*.pdb
+
+# EF Core migrations build artifacts (optional safety)
+Migrations/*.Designer.cs
+
+# =========================
+# Node / Angular Frontend
+# =========================
+node_modules/
+dist/
+out-tsc/
+.angular/
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+
+# =========================
+# Visual Studio / VS Code
+# =========================
+.vs/
+.vscode/
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
