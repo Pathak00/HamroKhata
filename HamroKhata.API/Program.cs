@@ -43,7 +43,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("Angular",
         policy =>
         {
-            policy.WithOrigins("https://yellow-moss-00e243010.7.azurestaticapps.net/api")
+            policy.WithOrigins("https://yellow-moss-00e243010.7.azurestaticapps.net")
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
