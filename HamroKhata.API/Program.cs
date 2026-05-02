@@ -32,11 +32,22 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 // ── CORS – allow Angular dev server ───────────────────────────────────────
+//builder.Services.AddCors(options =>
+//    options.AddPolicy("Angular", policy =>
+//        policy.WithOrigins("http://localhost:4200")
+//              .AllowAnyHeader()
+//              .AllowAnyMethod()));
+
 builder.Services.AddCors(options =>
-    options.AddPolicy("Angular", policy =>
-        policy.WithOrigins("http://localhost:4200")
-              .AllowAnyHeader()
-              .AllowAnyMethod()));
+{
+    options.AddPolicy("Angular",
+        policy =>
+        {
+            policy.WithOrigins("https://yellow-moss-00e243010.7.azurestaticapps.net")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 
 // ── Controllers + Swagger ─────────────────────────────────────────────────
 builder.Services.AddControllers();
