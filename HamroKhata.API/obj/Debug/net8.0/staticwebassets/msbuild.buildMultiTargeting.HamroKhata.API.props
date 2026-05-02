@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\HamroKhata.API.props" />
-</Project>
