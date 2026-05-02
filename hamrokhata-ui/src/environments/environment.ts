@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5191/api',
+  apiUrl: 'https://hamrokhata-api-czgegtg7a0e3cqc8.southeastasia-01.azurewebsites.net/',
   publicApiUrl: 'http://localhost:5191/public'
 };
