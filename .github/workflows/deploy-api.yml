@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'api/**'   # 👈 ONLY trigger when API changes
+      - HamroKhata.API/**'   # 👈 ONLY trigger when API changes
 
 jobs:
   build-and-deploy:
