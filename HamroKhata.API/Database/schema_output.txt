@@ -1,0 +1,7 @@
+Changed database context to 'master'.
+Database HamroKhata already exists.
+Changed database context to 'HamroKhata'.
+Table Users created.
+Table Customers created.
+Table Transactions created.
+=== Hamro Khata schema applied successfully ===

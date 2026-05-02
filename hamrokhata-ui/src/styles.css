@@ -1,0 +1,268 @@
+/* ============================================================
+   Hamro Khata – Global Styles
+   Mobile-first, clean, minimal bookkeeping UI
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --primary:     #2563eb;
+  --primary-dk:  #1d4ed8;
+  --danger:      #dc2626;
+  --success:     #16a34a;
+  --bg:          #f8fafc;
+  --card-bg:     #ffffff;
+  --text:        #1e293b;
+  --muted:       #64748b;
+  --border:      #e2e8f0;
+  --radius:      12px;
+  --shadow:      0 2px 8px rgba(0,0,0,.08);
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--card-bg);
+}
+
+/* ── Auth Pages ────────────────────────────────────────────── */
+.auth-bg {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  padding: 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.brand-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--text);
+}
+
+.auth-card .brand-title { font-size: 1.6rem; }
+
+/* ── Navbar ────────────────────────────────────────────────── */
+.hk-navbar {
+  background: var(--primary);
+  padding: 0.65rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(37,99,235,.25);
+}
+
+.hk-navbar .navbar-brand {
+  color: #fff !important;
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+}
+
+.btn-nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.btn-nav-link:hover { background: rgba(255,255,255,.15) !important; color: #fff !important; }
+
+/* ── Page Container ────────────────────────────────────────── */
+.page-container { min-height: calc(100vh - 56px); }
+
+/* ── Stat Cards (Dashboard) ────────────────────────────────── */
+.stat-card {
+  border-radius: var(--radius);
+  transition: transform .15s, box-shadow .15s;
+}
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.1); }
+
+.stat-icon { font-size: 1.8rem; line-height: 1; margin-bottom: 4px; }
+.stat-value { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+.stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .5px; }
+
+.receivable-positive { background: #fef2f2 !important; border-color: #fca5a5 !important; }
+.receivable-positive .stat-value { color: var(--danger); }
+
+/* ── Balance Banner ────────────────────────────────────────── */
+.balance-banner {
+  border-radius: var(--radius);
+  padding: 1.25rem !important;
+  transition: all .2s;
+}
+
+.banner-owed {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2) !important;
+  border-color: #fca5a5 !important;
+}
+.banner-clear {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7) !important;
+  border-color: #86efac !important;
+}
+
+.banner-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--muted);
+}
+.banner-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin: 4px 0;
+}
+.banner-owed  .banner-amount { color: var(--danger); }
+.banner-clear .banner-amount { color: var(--success); }
+
+/* ── Customer Cards ────────────────────────────────────────── */
+.customer-card {
+  border-radius: var(--radius);
+  transition: box-shadow .15s, transform .15s;
+  cursor: default;
+}
+.customer-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); transform: translateY(-1px); }
+
+.balance-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.balance-owed  { background: #fee2e2; color: var(--danger); }
+.balance-clear { background: #dcfce7; color: var(--success); }
+
+/* ── Transaction Rows ──────────────────────────────────────── */
+.tx-row {
+  border-radius: 10px;
+  border-left: 4px solid transparent;
+  transition: box-shadow .15s;
+}
+.tx-credit  { border-left-color: var(--danger) !important; background: #fff9f9 !important; }
+.tx-payment { border-left-color: var(--success) !important; background: #f9fff9 !important; }
+
+.tx-type-badge {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.tx-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.tx-date { font-size: 0.75rem; }
+
+/* ── Type Toggle Buttons ───────────────────────────────────── */
+.type-toggle .btn { font-size: 0.85rem; border-radius: 10px; }
+
+/* ── Modal Overlay ─────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex; align-items: flex-end;
+  z-index: 500;
+  animation: fadeIn .15s ease;
+}
+
+@media (min-width: 576px) {
+  .modal-overlay { align-items: center; justify-content: center; }
+  .modal-box { max-width: 440px !important; border-radius: var(--radius) !important; }
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px 16px 0 0 !important;
+  border: none;
+  animation: slideUp .2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+/* ── Public Ledger Page ────────────────────────────────────── */
+.public-bg {
+  background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 30%);
+}
+.public-bg .brand-title { font-size: 1.5rem; }
+
+/* ── Toast Message ─────────────────────────────────────────── */
+.toast-msg {
+  position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+  background: #1e293b; color: #fff;
+  padding: .5rem 1.25rem; border-radius: 30px;
+  font-size: .85rem; font-weight: 600;
+  z-index: 999;
+  animation: fadeIn .2s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* ── Empty State ───────────────────────────────────────────── */
+.empty-state { color: var(--muted); }
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn { border-radius: 10px; font-weight: 500; }
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background: var(--primary-dk);
+  border-color: var(--primary-dk);
+}
+
+/* ── Form Controls ─────────────────────────────────────────── */
+.form-control {
+  border-radius: 10px;
+  border-color: var(--border);
+  padding: 0.55rem 0.85rem;
+}
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+.form-control-lg { font-size: 1rem; padding: 0.7rem 1rem; }
+
+/* ── Responsive tweaks ─────────────────────────────────────── */
+@media (max-width: 576px) {
+  .stat-value { font-size: 1.1rem; }
+  .banner-amount { font-size: 1.6rem; }
+  .type-toggle .btn { font-size: 0.78rem; padding: .4rem .5rem; }
+}
