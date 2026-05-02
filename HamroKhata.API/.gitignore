@@ -1,0 +1,45 @@
+# =========================
+# ASP.NET Core build output
+# =========================
+bin/
+obj/
+publish/
+
+# =========================
+# User-specific files
+# =========================
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Visual Studio / VS Code
+# =========================
+.vs/
+.vscode/
+
+# =========================
+# ASP.NET Core runtime files
+# =========================
+wwwroot/
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Environment / secrets
+# =========================
+appsettings.Development.json
+appsettings.*.json
+.env
+.env.*
+
+# =========================
+# OS junk files
+# =========================
+.DS_Store
+Thumbs.db
